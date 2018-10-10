@@ -1,0 +1,14 @@
+---
+- name: Install a packages and prints the result
+  hosts: intranetweb
+  become: true  
+  tasks:
+  - name: Install the Package
+    yum:
+      name: httpd
+      state: latest
+    register: install_result
+
+  - name: print result
+    debug:
+      var: install_result

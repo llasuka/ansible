@@ -1,0 +1,8 @@
+---
+- name: Install and start Apache HTTPS
+  hosts: intranetweb
+  become: true
+  vars_files:
+  - vars.yml
+  tasks:
+  - include: environment.yml
