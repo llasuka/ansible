@@ -1,0 +1,9 @@
+[webservers]
+
+[loadbalancer]
+serverc.lab.example.com
+
+[servers:children]
+webservers
+loadbalancer
+

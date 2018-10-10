@@ -1,0 +1,2 @@
+ansible all -m command -a 'cat /etc/motd'
+ansible all -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd'
