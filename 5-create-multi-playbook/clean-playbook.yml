@@ -1,0 +1,18 @@
+---
+- name: UnInstall Apache HTTPS
+  hosts: intranetweb 
+  become: true
+  tasks:
+  - name: uninstall Apache HTTP Server
+    yum:
+      name: httpd
+      state: absent
+
+- name: Uninstall haproxy
+  hosts: loadbalancer 
+  become: true
+  tasks:
+  - name: uninstall haproxy
+    yum:
+      name: haproxy
+      state: absent

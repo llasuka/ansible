@@ -1,0 +1,29 @@
+---
+- name: Install and start Apache HTTPS
+  hosts: intranetweb 
+  become: true
+  tasks:
+  - name: install Apache HTTP Server
+    yum:
+      name: httpd
+      state: latest
+  - name: start Apache HTTP Server
+    service:
+      name: httpd
+      state: started
+      enabled: true
+
+- name: Install and start haproxy
+  hosts: loadbalancer 
+  become: true
+  tasks:
+  - name: install haproxy
+    yum:
+      name: haproxy
+      state: latest
+  - name: start haproxy
+    service:
+      name: haproxy
+      state: started
+      enabled: true
+
