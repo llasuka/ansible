@@ -1,0 +1,17 @@
+---
+- name: UnInstall package
+  hosts: all 
+  become: true
+  tasks:
+  - name: uninstall package
+    yum:
+      name: "{{ item }}"
+      state: absent
+    with_items:
+    - httpd
+    - haproxy 
+    - firewalld
+  - name: reset motd
+    copy:
+      content: ''
+      dest: /etc/motd

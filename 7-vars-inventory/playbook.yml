@@ -1,0 +1,25 @@
+---
+- name: Variable check
+  hosts: intranetweb 
+  become: true
+  tasks:
+  - name: print variable web_package_name
+    debug:
+      var: web_package_name
+  - name: print variable web_service_name
+    debug:
+      var: web_service_name
+  - name: print host variable var1
+    debug:
+      var: var1
+
+- name: Variable check
+  hosts: loadbalancer 
+  become: true
+  tasks:
+  - name: print variable lb_package_name
+    debug:
+      var: lb_package_name
+  - name: print variable lb_service_name
+    debug:
+      var: lb_service_name

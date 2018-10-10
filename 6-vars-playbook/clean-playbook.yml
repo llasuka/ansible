@@ -1,0 +1,9 @@
+---
+- name: Uninstall Apache HTTP Server 
+  hosts: intranetweb 
+  become: true
+  tasks:
+  - name: Uninstall Apache HTTP Server
+    yum:
+      name: httpd
+      state: absent

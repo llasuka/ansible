@@ -1,0 +1,19 @@
+[intranetweb]
+servera.lab.example.com  var1=joe
+serverb.lab.example.com
+
+[intranetweb:vars]
+web_package_name=httpd
+web_service_name=httpd
+
+[loadbalancer]
+serverc.lab.example.com
+
+[loadbalancer:vars]
+lb_package_name=haproxy
+lb_service_name=haproxy
+
+[everyone:children]
+intranetweb
+loadbalancer
+

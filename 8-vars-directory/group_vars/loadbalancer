@@ -1,0 +1,3 @@
+lb_package_name : haproxy
+lb_service_name : haproxy
+
