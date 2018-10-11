@@ -1,0 +1,6 @@
+---
+- name: use vhost role playbook
+  hosts: intranetweb
+  become: true
+  roles:
+  - myvhost
