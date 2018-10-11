@@ -1,0 +1,13 @@
+---
+- name: jinja2 template
+  hosts: all
+  become: true
+  vars:
+    system_owner: arakawa.asuka
+  tasks:
+  - template:
+      src: template/motd.j2
+      dest: /etc/motd
+      owner: root
+      group: root
+      mode: 0644

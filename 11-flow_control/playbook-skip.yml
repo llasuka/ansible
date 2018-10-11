@@ -1,0 +1,11 @@
+---
+- name: install package
+  hosts: intranetweb
+  become: true
+  tasks:
+  - name: install package
+    yum:
+      name: "{{ item }}"
+      state: latest
+    with_items: "{{ install_package }}"
+    when: install_package is defined

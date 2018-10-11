@@ -15,3 +15,7 @@
     copy:
       content: ''
       dest: /etc/motd
+  - name: remove html content
+    file:
+      path: /var/www
+      state: absent    
