@@ -1,10 +1,10 @@
 ---  
-- name: install "{{ package_name }}" package
+- name: install httpd package
   yum:
-    name: "{{ package_name }}" 
+    name: httpd 
     state: latest
-- name: start "{{ service_name }}" service
+- name: start httpd service
   service:
-    name: "{{ service_name }}"
+    name: httpd
     state: started
     enabled: true
